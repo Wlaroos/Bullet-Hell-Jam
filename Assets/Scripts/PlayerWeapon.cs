@@ -64,6 +64,7 @@ public class PlayerWeapon : MonoBehaviour
         {
             if (Input.GetMouseButton(0) && Time.time > _fireDelay + _startFireTime)
             {
+                CameraShake.Instance.CamShake();
                 Shoot();
             }
         }
@@ -71,6 +72,7 @@ public class PlayerWeapon : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0) && Time.time > _startFireTime + _fireDelay)
             {
+                CameraShake.Instance.CamShake();
                 Shoot();
             } 
         }
@@ -79,7 +81,6 @@ public class PlayerWeapon : MonoBehaviour
     private void Shoot()
     {
         //AudioManager.PlaySound("PoisonShot");
-        //CameraShaker.Instance.ShakeOnce(3f, 2f, 0.2f, 0.2f);
         
         gunEndPointPosition = shootTransform.position;
         
